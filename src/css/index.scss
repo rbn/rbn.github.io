@@ -1,0 +1,33 @@
+//custom start with the root (above reset)
+:root {
+ font-size: 62.5%;
+}
+
+// reset
+@import './reset';
+
+// more custom
+
+body {
+  font-size: 3rem;
+  display:flex;
+  flex-direction:column;
+}
+
+.container {
+  padding:2em;
+}
+
+.repel {
+  align-items: var(--repel-vertical-alignment,center);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gutter,var(--space-s-l));
+  justify-content: space-between;
+}
+
+.cluster {
+  .cluster, .grid {
+    gap: var(--gutter,var(--space-s-l));
+}
+}
