@@ -1,8 +1,8 @@
-import logo from "../assets/logo.svg";
-import TopNav from "../components/TopNav";
+import React from "react";
 import { Outlet } from "react-router-dom";
+import TopNav from "../components/TopNav";
 
-const Home = () => {
+const Layout = () => {
   return (
     <center-l>
       <header>
@@ -21,23 +21,15 @@ const Home = () => {
         </div>
       </header>
       <main className="blackout padding-throughout">
-        <div className="container">
-          <stack-l recursive space="2rem">
-            <h1>Hello, I'm Rich.</h1>
-            <p>I make things</p>
-            <p>add an error page</p>
-            <Outlet />
-          </stack-l>
-        </div>
+        <Outlet />
       </main>
       <footer className="grayout">
         <div className="container">
-          <h2>footer content</h2>
-          <box-l borderWidth="var(--border-thin)">This is a box</box-l>
+          <box-l borderWidth="0"></box-l>
         </div>
       </footer>
     </center-l>
   );
 };
 
-export default Home;
+export default Layout;
