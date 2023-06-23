@@ -1,0 +1,30 @@
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.blackout {
+  background-color: black;
+  color:var(--clr-light);
+}
+
+.grayout {
+  background-color:slategray;
+  color:var(--clr-light);
+}
+
+/* for the children of the one calling whitelines */
+.whitelines * {
+  border:var(--border-thin) solid var(--clr-light);
+}
+
+.border-inherit {
+  border:inherit;
+}
+
+.padding-throughout, .padding-throughout *  {
+  padding:var(--s2);
+}
