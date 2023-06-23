@@ -1,5 +1,6 @@
 import logo from "../assets/logo.svg";
 import TopNav from "../components/TopNav";
+import { Outlet } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -24,7 +25,8 @@ const Home = () => {
           <stack-l recursive space="2rem">
             <h1>Hello, I'm Rich.</h1>
             <p>I make things</p>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>add an error page</p>
+            <Outlet />
           </stack-l>
         </div>
       </main>
