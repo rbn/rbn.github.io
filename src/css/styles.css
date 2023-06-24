@@ -32,6 +32,10 @@ html, body {
   font-family: 'Mulish', sans-serif;
 }
 
+box-l {
+  text-align:center;
+}
+
 /* components */
 
 .container {
@@ -39,5 +43,4 @@ html, body {
   display:flex;
   flex-direction:column;
   justify-content: space-between;
-  
 }

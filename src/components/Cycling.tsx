@@ -1,5 +1,3 @@
-import React from "react";
-
 const Cycling = () => {
   return (
     <div className="container">

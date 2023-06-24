@@ -1,5 +1,8 @@
-import React from "react";
-const navigation = [{ name: "Cycling", href: "/cycling" }];
+const navigation = [
+  { name: "Cycling", href: "/cycling" },
+  { name: "Music", href: "/music" },
+  { name: "Productivity", href: "/prod" },
+];
 
 const TopNav = () => {
   return (

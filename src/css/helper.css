@@ -28,3 +28,21 @@
 .padding-throughout, .padding-throughout *  {
   padding:var(--s2);
 }
+
+*[data-drop-shadow] {
+  text-align:center;
+  border-top: .1rem solid white !important;
+  border-left: .1rem solid white !important;
+
+}
+
+*[data-lime] {
+  background-color:lime !important;
+  color:blue;
+}
+
+*[data-lime]:hover{
+  background-color:black !important;
+  color:white;
+
+}

@@ -1,0 +1,10 @@
+stack-l {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border:1px solid black;
+}
+
+stack-l > * + * {
+  margin-block-start: var(--s1);
+}
