@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const navigation = [
   { name: "Cycling", href: "/cycling" },
   { name: "Music", href: "/music" },
@@ -8,9 +10,9 @@ const TopNav = () => {
   return (
     <cluster-l role="list">
       {navigation.map((item) => (
-        <a key={item.name} href={item.href}>
+        <Link key={item.name} to={item.href}>
           {item.name}
-        </a>
+        </Link>
       ))}
     </cluster-l>
   );

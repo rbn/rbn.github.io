@@ -1,3 +1,15 @@
+@media (min-width: 50em) {
+  .container {
+      max-width:50em
+  }
+}
+
+@media (min-width: 80em) {
+  .container {
+      max-width:80em
+  }
+}
+
 :root {
   --font-size-base: 1rem;
   --font-size-biggish: 1.75rem;
@@ -18,22 +30,166 @@
   --s3: calc(var(--s2) * var(--ratio));
   --s4: calc(var(--s3) * var(--ratio));
   --s5: calc(var(--s4) * var(--ratio));
-
   --border-thin: var(--s-2);
+
+  /* andy:  */
+
+  --color-dark: #252525;
+  --color-light: #f9f9f9;
+  --color-mid: #666;
+  --color-mid-glare: #b3b3b3;
+  --color-primary: #089ce7;
+  --color-primary-shade: #167caf;
+  --color-primary-glare: #83c7ea;
+  --space-zero: clamp(0rem,-0.02rem + 0.11vw,0.0625rem);
+  --space-2xs: clamp(0.25rem,0.16rem + 0.43vw,0.5rem);
+  --space-xs: clamp(0.75rem,0.71rem + 0.22vw,0.875rem);
+  --space-s: clamp(1rem,0.96rem + 0.22vw,1.125rem);
+  --space-m: clamp(1.5rem,1.43rem + 0.33vw,1.6875rem);
+  --space-l: clamp(2rem,1.91rem + 0.43vw,2.25rem);
+  --space-xl: clamp(3rem,2.87rem + 0.65vw,3.375rem);
+  --space-2xl: clamp(4rem,3.83rem + 0.87vw,4.5rem);
+  --space-3xl: clamp(5rem,4.78rem + 1.09vw,5.625rem);
+  --space-4xl: clamp(6rem,5.74rem + 1.30vw,6.75rem);
+  --space-xs-s: clamp(0.75rem,0.62rem + 0.65vw,1.125rem);
+  --space-s-m: clamp(1rem,0.76rem + 1.20vw,1.6875rem);
+  --space-s-l: clamp(1rem,0.57rem + 2.17vw,2.25rem);
+  --space-m-l: clamp(1.5rem,1.24rem + 1.30vw,2.25rem);
+  --space-l-xl: clamp(2rem,1.52rem + 2.39vw,3.375rem);
+  --space-xl-2xl: clamp(3rem,2.48rem + 2.61vw,4.5rem);
+  --space-2xl-3xl: clamp(4rem,3.43rem + 2.83vw,5.625rem);
+  --space-3xl-4xl: clamp(5rem,4.39rem + 3.04vw,6.75rem);
+  --size-base: clamp(1rem,0.96rem + 0.22vw,1.125rem);
+  --size-step-0: clamp(0.8125rem,0.79rem + 0.11vw,0.875rem);
+  --size-step-1: clamp(1.1875rem,1.12rem + 0.33vw,1.375rem);
+  --size-step-2: clamp(1.4375rem,1.33rem + 0.54vw,1.75rem);
+  --size-step-3: clamp(1.6875rem,1.51rem + 0.87vw,2.1875rem);
+  --size-step-4: clamp(2.0625rem,1.85rem + 1.09vw,2.6875rem);
+  --font-base: 'Mulish', sans-serif;
+  --gutter: var(--space-s-m);
+  --border-radius: 0.75rem;
+  --border-radius-inner: 0.5rem;
+  --transition-base: 250ms ease;
+  --transition-movement: 200ms linear;
+  --transition-fade: 200ms ease;
+  --transition-bounce: 500ms cubic-bezier(0.5,0.05,0.2,1.5);
+  --wrapper-width: clamp(16rem,93vw,85rem);
+
 }
 
 /* elements  */
 
-html, body {
-  min-width:20rem;
-  max-width:50rem;
-  min-height:100%;
-  margin:auto;
-  font-family: 'Mulish', sans-serif;
+
+body {
+  background: var(--color-light);
+  color: var(--color-dark);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-base);
+  font-size: var(--size-base);
+  font-weight: 400;
+  line-height: 1.6
+}
+
+main {
+  flex: auto
 }
 
 box-l {
   text-align:center;
+}
+
+
+h1 {
+  font-size: var(--size-step-3)
+}
+
+h2 {
+  font-size: var(--size-step-2)
+}
+
+h3 {
+  font-size: var(--size-step-1);
+  line-height: 1.2
+}
+
+:is(h1,h2,h3) {
+  display: flex;
+  font-weight: 700;
+  gap: 1ch;
+  line-height: 1.2
+}
+
+:is(h1,h2,h3) check-mark {
+  margin-inline-start:-.5ch}
+
+:is(h1,h2,h3):before {
+  color: var(--color-mid)
+}
+
+a {
+  color: currentColor;
+  text-decoration-color: var(--color-primary);
+  text-decoration-thickness: 2px;
+  text-underline-offset: .2ex
+}
+
+[class*=bg-primary] a {
+  text-decoration-color: var(--color-dark)
+}
+
+a:hover {
+  text-underline-offset: .1ex
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--color-mid);
+  margin: var(--space-l-xl) 0!important;
+  max-width: 55rem;
+  transform: translateY(-1px)
+}
+
+:focus-visible {
+  outline: 1px dotted var(--color-dark);
+  outline-offset: .25rem
+}
+
+main:focus {
+  outline: none
+}
+
+button {
+  background: var(--color-primary-glare);
+  border: 1px solid var(--color-mid);
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  font-weight: 600;
+  padding: .3em 1em
+}
+
+button:hover {
+  background: var(--color-mid-glare)
+}
+
+::selection {
+  background: var(--color-dark);
+  color: var(--color-light)
+}
+
+@media (min-width: 50em) {
+  h1:before {
+      content:"#";
+      margin-inline-start:-2ch}
+
+  h2:before {
+      content: "##";
+      margin-inline-start:-3ch}
+
+  h3:before {
+      content: "###";
+      margin-inline-start:-4ch}
 }
 
 /* components */

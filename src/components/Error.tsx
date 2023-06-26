@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 const Error = () => {
   return (
     <Link to="/">
-      <link rel="stylesheet" href="/src/css/404.css" />
-      <div className="container">
+      <div className="container error">
         <div className="row">
           <div className="col-sm-12 col-md-12 mt-5 mb-5">
             <svg

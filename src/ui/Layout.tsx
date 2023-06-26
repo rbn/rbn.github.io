@@ -8,18 +8,13 @@ const Layout = () => {
         <div className="container">
           <cluster-l justify="space-between" align="center" space="var(--s1)">
             <a href="/">
-              <img
-                src="src/assets/logo.svg"
-                alt="logo"
-                width="50"
-                height="50"
-              />
+              <img src="/logo.svg" alt="logo" width="50" height="50" />
             </a>
             <TopNav />
           </cluster-l>
         </div>
       </header>
-      <main className="blackout padding-throughout">
+      <main className="blackout">
         <Outlet />
       </main>
       <footer className="grayout">

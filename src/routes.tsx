@@ -1,10 +1,10 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import Home from "./components/Home";
 import Error from "./components/Error";
 import Cycling from "./components/Cycling";
 import Layout from "./ui/Layout";
 
-export default createBrowserRouter([
+export default createHashRouter([
   {
     path: "/",
     element: <Layout />,

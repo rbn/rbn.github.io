@@ -5,9 +5,8 @@ const Home = () => {
         <box-l borderWidth="var(--border-thin)">
           <cluster-l>
             <h1>Hello, I'm Rich.</h1>
-            <box-l data-drop-shadow>
-              <div>I make things</div>
-            </box-l>
+            <box-l data-drop-shadow>I make things</box-l>
+            <button>button</button>
           </cluster-l>
         </box-l>
       </stack-l>
