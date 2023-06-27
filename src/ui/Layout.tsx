@@ -3,7 +3,7 @@ import TopNav from "../components/TopNav";
 
 const Layout = () => {
   return (
-    <center-l>
+    <center-l max="var(--measure)">
       <header>
         <div className="container">
           <cluster-l justify="space-between" align="center" space="var(--s1)">
