@@ -8,17 +8,17 @@
 
 .blackout {
   background-color: black;
-  color:var(--clr-light);
+  color:var(--color-light);
 }
 
 .grayout {
   background-color:slategray;
-  color:var(--clr-light);
+  color:var(--color-light);
 }
 
 /* for the children of the one calling whitelines */
 .whitelines * {
-  border:var(--border-thin) solid var(--clr-light);
+  border:var(--border-thin) solid var(--color-light);
 }
 
 .border-inherit {
