@@ -16,11 +16,15 @@
   color:var(--color-light);
 }
 
+
 /* for the children of the one calling whitelines */
 .whitelines * {
   border:var(--border-thin) solid var(--color-light);
 }
 
+.blacklines * {
+  border:var(--border-thin) solid var(--color-dark);
+}
 .border-inherit {
   border:inherit;
 }

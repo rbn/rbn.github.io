@@ -61,7 +61,8 @@ body {
 }
 
 main > *+* {
-  margin-block-start:var(--s-2);
+  margin-block-start:var(--s-3);
+  margin-block-end:var(--s-3);
 }
 
 section {
@@ -78,64 +79,57 @@ section, section * {
   padding:var(--s1);
 }
 
-section:first-of-type {
+section.title {
   display:inline-block;
   align-self:start;
   margin:0;
   padding:0;
 }
 
-h1 {
+h1, h2 {
   padding:0;
   margin:0;
 }
 
+
 /* box */
-.box{
+#boxes > .box {
   position:relative;
   display:flex;
-  flex: 0 1 10%;
+  flex: 1 1 20%;
   min-inline-size: calc(var(--measure) /4);
   min-block-size: calc(var(--measure) / 4);
 }
 
-.box > span:nth-child(1), .box > img {
-  border: none;
-}
 
-.box > img {
-  padding:0;
-}
-
-.box:nth-child(3n - 2) > span:nth-child(1) {
+#boxes > .box:nth-of-type(3n - 2) > span:nth-child(1) {
   display: inline-block;
   align-self: start;
   padding:0;
   border:0;
 }
 
-.box:nth-child(3n - 1) > span:nth-child(1) {
+#boxes > .box:nth-of-type(3n - 1) > span:nth-child(1) {
   display: inline-block;
   align-self: center;
   padding:0;
   border:0;
 }
 
-.box:nth-child(3n - 0) > span:nth-child(1) {
+#boxes > .box:nth-of-type(3n - 0) > span:nth-child(1) {
   display: inline-block;
   align-self: end;
   padding:0;
-  border:0;
+  border:0; 
 }
 
-.box:nth-child(6) {
-  display: inline-block;
-  align-self: end;
+#boxes > .box > img, #boxes > .box:has(img) {
   padding:0;
-  border:0;
+  border:none;
 }
 
-.box:last-of-type:hover {
+
+#boxes > .box:last-of-type:hover {
   border:var(--border-thin) solid var(--color-light);
 }
 
@@ -149,7 +143,53 @@ h1 {
   position:absolute;
   bottom:calc(var(--border-thin)*-2); 
   right:calc(var(--border-thin)*2);
-
 }
 
-/* box */
+/* stack  - with its own boxes */
+
+.stack {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position:relative;
+  max-width:80%;
+}
+
+.stack > div {
+  position:relative;
+}
+
+.stack *+* {
+  margin-block-start:var(--s1);
+}
+
+.stack > .box {
+  position:relative;
+  display:flex;
+  flex: 1 1 auto;
+  min-inline-size: calc(var(--measure) /4);
+  min-block-size: calc(var(--measure) / 4);
+}
+
+
+.stack > .box > span:nth-child(1) {
+  display: inline-block;
+  align-self: center;
+  padding:0;
+  border:0;
+}
+
+.stack > .box > img, .stack > .box:has(img) {
+  padding:0;
+  border:none;
+}
+
+.stack img:hover {
+  border:var(--border-thin) solid var(--color-light);
+}
+
+.stack > .box:has(img) {
+  align-items: center;
+}
+
+
