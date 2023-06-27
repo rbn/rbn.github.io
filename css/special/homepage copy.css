@@ -1,0 +1,110 @@
+.homepage > * {
+  max-width: 70rem;
+  padding-inline: var(--s1);
+}
+
+/* Resets <main> styles */
+.homepage > * + * {
+  margin-top: unset;
+}
+
+.homepage h1,
+.homepage h2 {
+  hyphens: unset;
+}
+
+.homepage h1 {
+  max-width: 28ch;
+}
+
+.homepage h2 {
+  max-width: 42ch;
+}
+
+.homepage p {
+  max-width: 60ch;
+}
+
+/* Black and white images */
+img:not([src*='.svg']) {
+  border: var(--border-thin) solid;
+  filter: saturate(0%) contrast(200%) brightness(140%);
+  transform: scale(101%);
+}
+
+/* Intro section */
+.homepage__intro {
+  align-items: center;
+}
+
+.homepage__intro .cta {
+  font-size: var(--s2);
+  margin-block-start: var(--s1);
+}
+
+.homepage__intro img {
+  outline: var(--border-thick) solid;
+  display: block;
+  outline-offset: calc(var(--border-thick) * -1);
+  max-width: 25rem;
+  margin-inline: auto;
+}
+
+/* Companies section */
+.homepage__companies {
+  padding-inline-start: var(--s5);
+  position: relative;
+}
+
+/* Stripey boi */
+.homepage__companies::before {
+  content: '';
+  display: block;
+  width: 1rem;
+  height: 100%;
+  position: absolute;
+  inset: 0 auto 0 var(--s1);
+  background-image: linear-gradient(45deg, #fafafa 25%, #050505 25%, #050505 50%, #fafafa 50%, #fafafa 75%, #050505 75%, #050505 100%);
+  background-size: 1.3rem 1.3rem;
+}
+
+.homepage__companies img {
+  display: block;
+  max-width: 200px;
+  max-height: 150px;
+}
+
+.homepage__companies cluster-l {
+  max-width: 50rem;
+  margin-block-start: var(--s4);
+}
+
+/* Testimonials */
+.homepage__testimonial {
+  width: clamp(14rem, 80%, 30rem);
+  font-family: var(--font-serif);
+}
+
+.homepage__testimonial h3 {
+  font-size: var(--s0);
+}
+
+.homepage__testimonial p {
+  font-style: italic;
+  font-size: 1.2em;
+}
+
+.homepage__testimonial img {
+  flex: none;
+  max-width: 8rem;
+}
+
+.homepage reel-l {
+  padding-bottom: 1rem;
+}
+
+/* Picture index */
+.homepage .docs-picture-index {
+  width: 100%;
+  margin-block-start: var(--s5);
+}
