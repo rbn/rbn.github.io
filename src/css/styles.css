@@ -229,3 +229,26 @@ h1, h2 {
 #center img:hover {
   border:var(--border-thick) dotted var(--color-red);  
 }
+
+/* switcher  */
+
+.switcher {  
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+}
+
+.switcher > * {
+  flex-grow: 1;  
+  flex-basis: calc(( 35ch - 100%) * 999);
+}
+
+.switcher > :nth-child(2) {
+  flex-grow: 2;
+  background-color:var(--color-green)
+}
+
+.switcher > :nth-last-child(n+ 5),
+.switcher > :nth-last-child(n+ 5) ~ * {
+  flex-basis: 100%;
+}
