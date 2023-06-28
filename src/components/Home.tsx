@@ -2,14 +2,12 @@ const Home = () => {
   return (
     <main>
       {" "}
-      <section className="blacklines figurine-box">
-        <div id="box-figurine" className="box"></div>
+      <section id="box-figurine" className="blacklines">
+        <h2>The Box</h2>
+        <div className="box"></div>
       </section>
-      <section className="title">
-        <h1>The Box</h1>
-      </section>
-      <section id="boxes" className="blackout whitelines">
-        <div className="box">
+      <section id="box-demo" className="blackout">
+        <div className="box invert">
           <span>I am a box</span>
           <span className="words">box</span>
         </div>
@@ -17,15 +15,15 @@ const Home = () => {
           <span>if you remove one of me</span>
           <span className="words">box</span>
         </div>
-        <div className="box">
+        <div className="box invert">
           <span>things happen.</span>
           <span className="words">box</span>
         </div>
         <div className="box">
-          <span>I manage my padding lorem20</span>
+          <span>I manage my padding</span>
           <span className="words">box</span>
         </div>
-        <div className="box">
+        <div className="box invert">
           <span>don't ask me to manage margins or spacing</span>
           <span className="words">box</span>
         </div>
@@ -34,17 +32,15 @@ const Home = () => {
           <span className="words">box</span>
         </div>
       </section>
-      <section className="blacklines">
-        <div className="stack stack-figurine">
+      <section id="stack-figurine" className="blacklines">
+        <h2>The Stack</h2>
+        <div className="stack">
           <div></div>
           <div></div>
           <div></div>
         </div>
       </section>
-      <section className="title">
-        <h2>The Stack</h2>
-      </section>
-      <section id="stacks" className="grayout whitelines">
+      <section id="stack-demo" className="grayout">
         <div className="stack">
           <div className="box">
             <span>I am the stack</span>
@@ -82,15 +78,13 @@ const Home = () => {
           <span className="words">stack</span>
         </div>
       </section>{" "}
-      <section className="blacklines">
+      <section id="center-figurine" className="blacklines">
+        <h2>The Center</h2>
         <div>
           <hr />
         </div>
       </section>
-      <section className="title">
-        <h2>The Center</h2>
-      </section>
-      <section id="center" className="blackout">
+      <section id="center-demo" className="blackout">
         <div className="center">
           <div className="stack whitelines">
             <span>put a sidebar next to me later, ok?</span>
@@ -98,14 +92,99 @@ const Home = () => {
           </div>
         </div>
       </section>{" "}
-      <section className="blacklines">
-        <div></div>
-      </section>
-      <section className="title">
+      <section id="cluster-figurine" className="blacklines">
         <h2>The Cluster</h2>
+        <div className="cluster">
+          <span>x</span>
+          <span>xxx</span>
+          <span>xx</span>
+          <span>xxxx</span>
+          <span>xx</span>
+          <span>xxxxxxxxxx</span>
+          <span>xx</span>
+        </div>
       </section>
-      <section id="center" className="grayout">
-        <div></div>
+      <section id="cluster" className="grayout">
+        <div id="cluster-demo" className="cluster">
+          <img src="trooper.jpg" alt="" />
+          <div className="cluster">
+            <div>
+              <a href="#">we stay away</a>
+            </div>
+            <div>
+              <a href="#">from the image</a>
+            </div>
+            <div>
+              <a href="#">but cluster</a>
+            </div>
+            <div>
+              <a href="#">together</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="sidebar-figurine">
+        <div className="sidebar-container">
+          <div className="box">
+            <h2>The Sidebar </h2>
+            <div>(return to fix figurine)</div>
+          </div>
+          <div className="sidebar-container">
+            <div className="box"></div>
+            <div className="box"></div>
+          </div>
+        </div>
+      </section>
+      <section id="sidebar-demo" className="blackout">
+        <div className="sidebar-container">
+          <div className="sidebar">
+            <div className="cluster">
+              <div>
+                <a href="#">cluster!</a>
+              </div>
+              <div>
+                <a href="#">band together</a>
+              </div>
+              <div>
+                <a href="#">in this fixed width</a>
+              </div>
+              <div>
+                <a href="#">sidebar</a>
+              </div>
+            </div>
+          </div>
+          <div className="primary-content">
+            <img src="yoda.jpg" alt="" />
+          </div>
+        </div>
+      </section>
+      <section id="grid-figurine" className="blacklines">
+        <h2>The Grid</h2>
+        <div className="grid">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </section>
+      <section id="grid-demo" className="grayout">
+        <div>another to do from this section - learn Resize Observer</div>
+        <div className="grid">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </section>
     </main>
   );

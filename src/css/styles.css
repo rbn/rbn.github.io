@@ -9,7 +9,8 @@
   --color-light: #fafafa;
   --color-mid: grey;
   --color-green: #61A590;
-  --color-red: #d62b2b;
+  --color-love-red: #d62b2b;
+  --color-love-blue: #53B1EF;
   --ratio: 1.4;
   --s-5: clamp(0.33rem,0.39rem + -0.29vw,0.18rem);
   --s-4: clamp(0.41rem,0.47rem + -0.31vw,0.25rem);
@@ -26,8 +27,9 @@
   --line-height: var(--ratio);
   --line-height-small: calc(0.8*var(--ratio));
   --border-real-thin: calc(var(--s-5)/4);
-  --border-thin: var(--s-5);
+  --border-thin: var(--s-4);
   --border-thick: var(--s-2);
+  --border-real-thick: var(--s-1);
   line-height: var(--ratio);
   font-size: calc(.333vw + 1em);
   font-family: var(--font-plain);
@@ -93,14 +95,35 @@ h1, h2 {
   margin:0;
 }
 
-
+/* some page-specific items */
+section h1, h2, h3 {
+  border:0 !important;
+}
 /* box */
-#box-figurine {
+
+.box {
+  padding: var(--s1);
+  border: var(--border-real-thin) solid var(--color-dark);
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+
+.box * {
+  color: inherit;
+}
+
+.box.invert {
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  border-color: var(--color-light);
+}
+
+#box-figurine > div {
   min-inline-size: 8rem;
   min-block-size: 8rem;
 }
 
-#boxes > .box {
+#box-demo > .box {
   position:relative;
   display:flex;
   flex: 1 1 20%;
@@ -108,38 +131,37 @@ h1, h2 {
   min-block-size: calc(var(--measure) / 4);
 }
 
-
-#boxes > .box:nth-of-type(3n - 2) > span:nth-child(1) {
+#box-demo > .box:nth-of-type(3n - 2) > span:nth-child(1) {
   display: inline-block;
   align-self: start;
   padding:0;
   border:0;
 }
 
-#boxes > .box:nth-of-type(3n - 1) > span:nth-child(1) {
+#box-demo > .box:nth-of-type(3n - 1) > span:nth-child(1) {
   display: inline-block;
   align-self: center;
   padding:0;
   border:0;
 }
 
-#boxes > .box:nth-of-type(3n - 0) > span:nth-child(1) {
+#box-demo > .box:nth-of-type(3n - 0) > span:nth-child(1) {
   display: inline-block;
   align-self: end;
   padding:0;
   border:0; 
 }
 
-#boxes > .box > img, #boxes > .box:has(img) {
+#box-demo > .box > img, #box-demo > .box:has(img) {
   padding:0;
   border:none;
 }
 
-#boxes > .box:last-of-type:hover {
+#box-demo > .box:last-of-type:hover {
   border:var(--border-thin) solid var(--color-light);
 }
 
-.words {
+#box-demo .words, #stack-demo .words {
   border-width:var(--border-real-thin) !important;
   padding-inline-start:var(--s-3);
   padding-inline-end:var(--s-3);
@@ -147,66 +169,72 @@ h1, h2 {
   display:block;
   font-size:var(--s-2);
   position:absolute;
-  bottom:calc(var(--border-thin)*-2); 
-  right:calc(var(--border-thin)*2);
+  bottom:calc(var(--border-thin)*-1.5); 
+  right:calc(var(--border-thin)*1.5);
 }
 
 
-/* stack  - with its own boxes */
+/* stack  - with its own box */
 
 .stack {
   display:flex;
   flex-direction: column;
   justify-content: flex-start;
-  position:relative;
   max-width:80%;
-}
-
-.stack > div {
-  position:relative;
 }
 
 .stack *+* {
   margin-block-start:var(--s1);
 }
 
-.stack-figurine > div {
-  min-inline-size: 6rem;
-}
-.stack-figurine, .stack-figurine * {
-  padding:var(--s-1);
-}
-.stack-figurine *+*  {
-  margin-block-start:var(--s-3);
+#stack-demo, #stack-demo * {
+  color: var(--color-light);
+  border:var(--border-thin) solid var(--color-light);
 
 }
+#stack-demo > div {
+  position:relative;
+}
 
-.stack > .box {
+#stack-demo .stack .box {
   position:relative;
   display:flex;
   flex: 1 1 auto;
+  background-color:inherit;
+  border:inherit;
   min-inline-size: calc(var(--measure) /4);
-  min-block-size: calc(var(--measure) / 4);
+  min-block-size: calc(var(--measure) / 4); 
 }
 
-.stack > .box > span:nth-child(1) {
+#stack-demo .stack > .box > span:nth-child(1) {
   display: inline-block;
   align-self: center;
   padding:0;
   border:0;
 }
 
-.stack > .box > img, .stack > .box:has(img) {
+#stack-demo .stack > .box > img, #stack-demo .stack > .box:has(img) {
   padding:0;
   border:none;
 }
 
-.stack > .box:last-of-type:hover {
+#stack-demo .stack > .box:last-of-type:hover {
   border:var(--border-thin) solid var(--color-green);
 }
 
-.stack > .box:has(img) {
+#stack-demo .stack > .box:has(img) {
   align-items: center;
+}
+
+#stack-figurine > div {
+  min-inline-size: 6rem;
+}
+#stack-figurine, #stack-figurine * {
+  padding:var(--s-1);
+}
+#stack-figurine *+*  {
+  margin-block-start:var(--s-3);
+
 }
 
 /* center */
@@ -222,10 +250,130 @@ h1, h2 {
   align-items: center;
 }
 
-#center img {
-  border:var(--border-thick) dotted var(--color-green);  
+#center-demo img {
+  border:var(--border-thick) dotted var(--color-love-red);  
 }
 
-#center img:hover {
-  border:var(--border-thick) dotted var(--color-red);  
+#center-demo img:hover {
+  border:var(--border-real-thick) dotted var(--color-love-blue);  
+}
+
+/* cluster */
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space, .5rem);
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#cluster {
+  --s-custom: calc(var(--s-5) * .3); 
+  padding-inline-start: 1rem;
+  padding-inline-end:1rem;
+  color:var(--color-light);
+}
+
+#cluster-demo, #cluster-demo * {
+  padding:0;
+  }
+
+#cluster-demo {
+  inline-size:100%;
+  justify-content:space-between;
+}
+
+#cluster-demo div {
+  padding:var(--s-4);
+}
+
+#cluster-demo img {
+  max-inline-size:3.5rem;
+  border: var(--s-custom) solid var(--color-green);
+}
+
+#cluster-demo a {
+  padding:0;
+  font-size: var(--s0);
+}
+
+#cluster-figurine > div {
+  max-inline-size: 16 rem;
+}
+
+#cluster-figurine * {
+padding:.5rem;
+}
+
+#cluster-figurine span{
+  color:var(--color-light);
+}
+
+/* 
+sidebar.  note - naming can get confusing.  the sidebar is the container that manages two elements, the thing that will be the actual side bar (first element int he container) and the second element which will take up the rest of the page */
+
+.sidebar-container {
+  display:flex;
+  flex-wrap:wrap;
+  gap:var(--s1)
+}
+
+
+.sidebar-container > :first-child {
+  flex: 0 0 25ch;
+}
+
+.sidebar-container > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: 50%;
+}
+
+#sidebar-demo .cluster {
+  display:block;
+}
+
+#sidebar-demo * {
+  color: var(--color-light);
+  padding: 0;
+  margin:0;
+}
+
+#sidebar-demo .box {
+  background-color:transparent;
+}
+
+#sidebar-demo img {
+  border:1px solid black;
+}
+
+/* flex-grid */
+
+.grid {
+  display:grid;
+  gap:var(--s0);
+  inline-size: 100%;
+}
+
+@supports (width: min(8ch, 100%)) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(8ch, 100%), 1fr));
+  }
+}
+
+#grid-demo .grid, #grid-demo .grid * {
+  color: var(--color-light);
+  border:var(--border-thin) solid var(--color-light); 
+}
+#grid-demo  .grid > *:nth-child(odd):last-child {
+  background-color:lime !important;
+}
+
+#grid-figurine .grid {
+  max-inline-size: 60%;
+}
+
+#grid-figurine  .grid > *:nth-child(odd) {
+  background-color:lime !important;
 }
