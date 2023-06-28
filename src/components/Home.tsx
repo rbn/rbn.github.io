@@ -1,6 +1,10 @@
 const Home = () => {
   return (
     <main>
+      {" "}
+      <section className="blacklines figurine-box">
+        <div id="box-figurine" className="box"></div>
+      </section>
       <section className="title">
         <h1>The Box</h1>
       </section>
@@ -31,8 +35,10 @@ const Home = () => {
         </div>
       </section>
       <section className="blacklines">
-        <div>
-          <hr />
+        <div className="stack stack-figurine">
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
       </section>
       <section className="title">
@@ -70,7 +76,7 @@ const Home = () => {
             <span className="words">stacked element</span>
           </div>
           <div className="box">
-            <img id="war" src="warbike.png" />
+            <img id="war" src="trooper.jpg" />
             <span className="words">stacked element</span>
           </div>
           <span className="words">stack</span>
@@ -82,13 +88,23 @@ const Home = () => {
         </div>
       </section>
       <section className="title">
-        <h2>something else</h2>
+        <h2>The Center</h2>
       </section>
-      <section className="blackout">
+      <section id="center" className="blackout">
+        <div className="center">
+          <div className="stack whitelines">
+            <span>put a sidebar next to me later, ok?</span>
+            <img src="velo.jpg" />
+          </div>
+        </div>
+      </section>{" "}
+      <section className="blacklines">
         <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+      </section>
+      <section className="title">
+        <h2>The Cluster</h2>
+      </section>
+      <section id="center" className="grayout">
         <div></div>
       </section>
     </main>
