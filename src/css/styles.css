@@ -86,11 +86,6 @@ section.title {
   padding:0;
 }
 
-h1, h2, strong {
-  padding:0;
-  margin:0;
-}
-
 /* some page-specific items */
 
 #page {  
@@ -145,26 +140,16 @@ section:nth-of-type(4n + 4) {
 .box {
   display:flex;
   padding: var(--s1);
-  border: var(--border-real-thin) solid var(--color-dark);
-  color: var(--color-dark);
-  background-color: var(--color-light);
-}
-
-.invert {
-  color: var(--color-light);
-  background-color: var(--color-dark);
-  border-color: var(--color-light);
-}
-
-
-
-.box * {
-  color: inherit;
 }
 
 #box-figurine > div {
-  min-inline-size: 8rem;
-  min-block-size: 8rem;
+  min-inline-size: 33%;
+}
+
+#box-demo {
+  display:flex;
+  justify-content:flex-start;
+  align-items:stretch;
 }
 
 #box-demo > .box {
@@ -173,13 +158,29 @@ section:nth-of-type(4n + 4) {
   flex: 1 1 20%;
   min-inline-size: calc(var(--measure) /4);
   min-block-size: calc(var(--measure) / 4);
+  border: var(--border-real-thin) solid var(--color-dark);
+  color: var(--color-dark);
+  background-color: var(--color-light);
 }
 
+#box-demo > .box * {
+  color: inherit;
+}
 
+#box-demo .invert {
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  border-color: var(--color-light);
+}
+
+#box-demo > .box:last-of-type {
+  /* prevent image box from exceeding this particular image's size,
+  otherwise whitespace shows up. */
+  max-inline-size:800px;
+}
 #box-demo > .box:last-of-type:hover {
   border:var(--border-thin) solid var(--color-light);
 }
-
 
 /* stack */
 
@@ -207,14 +208,6 @@ section:nth-of-type(4n + 4) {
   color: var(--color-light);
 }
 
-#stack-demo .stack > .box > span:nth-child(1) {
-  display: inline-block;
-  align-self: center;
-  padding:0;
-  border:0;
-}
-
-
 #stack-demo .stack > .box:last-of-type:hover {
   border:var(--border-thin) solid var(--color-green);
 }
@@ -237,14 +230,18 @@ section:nth-of-type(4n + 4) {
 /* center */
 
 .center {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
   box-sizing: content-box;
   margin-inline: auto;
   max-inline-size: var(--measure);
   padding-inline-start: var(--s2);
   padding-inline-end:   var(--s2);
-  display:flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+#center-demo {
+color:var(--color-light);
 }
 
 #center-demo img {
@@ -265,16 +262,12 @@ section:nth-of-type(4n + 4) {
   align-items: center;
 }
 
-#cluster {
+#cluster-demo {
   --s-custom: calc(var(--s-5) * .3); 
   padding-inline-start: 1rem;
   padding-inline-end:1rem;
   color:var(--color-light);
 }
-
-#cluster-demo > div, #cluster-demo * {
-  padding:0;
-  }
 
 #cluster-demo {
   inline-size:100%;
@@ -285,12 +278,25 @@ section:nth-of-type(4n + 4) {
   padding:var(--s-4);
 }
 
+/* parent cluster */
+#cluster-demo > .cluster {
+  inline-size:100%;
+  justify-content:space-between;
+}
+
+/* embedded cluster */
+#cluster-demo > .cluster > .cluster {
+  min-inline-size:60%;
+  justify-content:space-between;
+}
+
 #cluster-demo img {
   max-inline-size:3.5rem;
   border: var(--s-custom) solid var(--color-green);
 }
 
 #cluster-demo a {
+  color:var(--color-light);
   padding:0;
   font-size: var(--s0);
 }
@@ -351,6 +357,14 @@ sidebar.  note - naming can get confusing.  the sidebar is the container that ma
   display:grid;
   gap:var(--s0);
   inline-size: 100%;
+}
+
+/* this is from the web to get a 1:1 ration of squares.  this needs to be reviewed.  1.2 is a magic number */
+.grid > *::before {
+  content: "";
+  display: inline-block;
+  height: 0;
+  padding-bottom: calc(100% / 1.2);  
 }
 
 @supports (width: min(8ch, 100%)) {
@@ -429,8 +443,10 @@ sidebar.  note - naming can get confusing.  the sidebar is the container that ma
   object-position: 0% 0%
 }
 
-#frame-demo * {
-  padding:0;
+@media (orientation: portrait) {
+  .frame {
+    aspect-ratio: 1 / 1;
+  }
 }
 
 #frame-figurine img {
@@ -438,9 +454,12 @@ sidebar.  note - naming can get confusing.  the sidebar is the container that ma
   width:20rem;
 }
 
-
-@media (orientation: portrait) {
-  .frame {
-    aspect-ratio: 1 / 1;
-  }
+#frame-figurine .primary-content {
+  max-inline-size:300px;
 }
+
+
+#frame-demo * {
+  padding:0;
+}
+

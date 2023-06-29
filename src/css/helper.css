@@ -2,6 +2,9 @@
   padding:0;
 }
 
+.nobord {
+  border:0 !important;
+}
 .inline-block {
   display:inline-block;
 }

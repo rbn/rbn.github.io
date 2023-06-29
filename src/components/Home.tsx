@@ -9,7 +9,14 @@ const Home = () => {
             playbook.
           </p>
           <h3>List of conventions</h3>
-          <ul></ul>
+          <ul>
+            <li>Black and gray sections are styled based on html structure</li>
+            <li>Black and white diagrams depend on class name ("-figurine")</li>
+            <li>
+              look at frame figurine and cluster demo - strangeness with
+              breakpoints (maybe due to percentages?)
+            </li>
+          </ul>
         </div>
       </header>
       <main>
@@ -101,8 +108,10 @@ const Home = () => {
             <div className="stack invert">
               <span>
                 i live in a div that lives in a stack, and that stack is
-                centered. <strong>And yet,</strong> text is left-aligned.
+                centered.{" "}
               </span>
+              <hr /> <strong>And yet,</strong>{" "}
+              <span>the text is left-aligned.</span>
               <img src="velo.jpg" />
             </div>
           </div>
@@ -121,7 +130,7 @@ const Home = () => {
         </section>
         <section id="cluster-demo">
           <div className="cluster">
-            <img src="trooper.jpg" alt="" />
+            <img src="trooper.jpg" alt="" className="nopad" />
             <div className="cluster">
               <div>
                 <a href="#">we stay away</a>
@@ -139,16 +148,9 @@ const Home = () => {
           </div>
         </section>
         <section id="sidebar-figurine">
-          <div className="sidebar-container">
-            <div className="box">
-              <h2>The Sidebar </h2>
-              <div>(return to fix figurine)</div>
-            </div>
-            <div className="sidebar-container">
-              <div className="box"></div>
-              <div className="box"></div>
-            </div>
-          </div>
+          <h2>The Sidebar </h2>
+          <div className="box"></div>
+          <div className="box"></div>
         </section>
         <section id="sidebar-demo">
           <div className="sidebar">
@@ -216,11 +218,11 @@ const Home = () => {
         </section>
         <section id="frame-figurine">
           <div className="sidebar">
-            <div className="sidebar-side">
+            <div className="sidebar-side nobord">
               <h2>The Frame</h2>
             </div>
-            <div className="primary-content">
-              <img src="yoda.jpg" alt="" />
+            <div className="frame center primary-content nopad">
+              <img src="yoda.jpg" alt="" className="nopad" />
             </div>
           </div>
         </section>
