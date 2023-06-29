@@ -1,7 +1,6 @@
 const Home = () => {
   return (
     <main>
-      {" "}
       <section id="box-figurine" className="blacklines">
         <h2>The Box</h2>
         <div className="box"></div>
@@ -140,16 +139,16 @@ const Home = () => {
           <div className="sidebar">
             <div className="cluster">
               <div>
-                <a href="#">cluster!</a>
+                <a href="#">birds of</a>
               </div>
               <div>
-                <a href="#">band together</a>
+                <a href="#">a feather</a>
               </div>
               <div>
-                <a href="#">in this fixed width</a>
+                <a href="#">flock</a>
               </div>
               <div>
-                <a href="#">sidebar</a>
+                <a href="#">together</a>
               </div>
             </div>
           </div>
@@ -184,6 +183,18 @@ const Home = () => {
           <div></div>
           <div></div>
           <div></div>
+        </div>
+      </section>
+      <section id="switcher-figurine"></section>
+      <section id="switcher-demo">
+        <div>
+          <em>Next up:</em> switcher
+          <ul>
+            <li>switcher</li>
+            <li>resize observer</li>
+            <li>reel</li>
+            <li>imposter (is it like my labels??)</li>
+          </ul>
         </div>
       </section>
     </main>

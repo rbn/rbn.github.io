@@ -362,8 +362,12 @@ sidebar.  note - naming can get confusing.  the sidebar is the container that ma
   }
 }
 
-#grid-demo .grid, #grid-demo .grid * {
+
+#grid-demo {
   color: var(--color-light);
+}
+
+#grid-demo .grid, #grid-demo .grid * {
   border:var(--border-thin) solid var(--color-light); 
 }
 #grid-demo  .grid > *:nth-child(odd):last-child {
