@@ -1,32 +1,17 @@
-
-
-.blackout {
-  background-color:var(--color-dark);
+.nopad {
+  padding:0;
 }
 
-.grayout {
-  background-color:slategray;
+.inline-block {
+  display:inline-block;
 }
 
-.invert, .invert * {
-  color: var(--color-light) !important;
-  background-color: var(--color-dark) !important;
-  border-color: var(--color-light);
+.align-self-start {
+  align-self: start;
 }
-
-
-section[id*="figurine"] * {
-  border:var(--border-real-thin) solid var(--color-dark);
+.align-self-center {
+  align-self: center;
 }
-
-.feature {
-  border:var(--border-real-thin) solid var(--color-love-red) !important;
+.align-self-end {
+  align-self: end;
 }
-.border-inherit {
-  border:inherit;
-}
-
-.padding-throughout, .padding-throughout *  {
-  padding:var(--s2);
-}
-

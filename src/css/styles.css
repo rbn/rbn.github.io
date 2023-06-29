@@ -4,7 +4,7 @@
   --font-special: Barlow Condensed,Helvetica,sans-serif;
   --font-mono: Menlo,Courier,Courier New,Andale Mono,monospace;
   --color-dark: #050505;
-  --color-darkish: #404040;
+  --color-darkish: slategray;
   --color-lightish: #e6e6e6;
   --color-light: #fafafa;
   --color-mid: grey;
@@ -23,7 +23,7 @@
   --s3: clamp(1.95rem,1.61rem + 1.7vw,2.83rem);
   --s4: clamp(2.44rem,1.83rem + 3.04vw,4rem);
   --s5: clamp(3.05rem,2.04rem + 5.07vw,5.65rem);
-  --measure: 65ch;
+  --measure: 100ch;
   --line-height: var(--ratio);
   --line-height-small: calc(0.8*var(--ratio));
   --border-real-thin: calc(var(--s-5)/4);
@@ -38,7 +38,6 @@
 }
 
 *,:after,:before {
-  box-sizing: border-box;
   background-color: inherit;
   font-family: inherit;
   color: inherit;
@@ -57,11 +56,6 @@
 body {
     box-sizing: content-box;
     margin-inline: auto;
-    max-inline-size: var(--measure);
-    padding-inline-start: var(--s1);
-    padding-inline-end: var(--s1);
-    padding-block-start:var(--s5);  
-    padding-block-end:var(--s5);  
     color:var(--color-dark);
     background-color:var(--color-light);
 }
@@ -98,17 +92,71 @@ h1, h2, strong {
 }
 
 /* some page-specific items */
+
+#page {  
+  padding-inline-start: var(--s1);
+  padding-inline-end: var(--s1);
+  padding-block-start:var(--s1);  
+  padding-block-end:var(--s1);  
+}
+
+#page.sidebar > :first-child {
+  flex: 0 0 40ch;
+}
+
+header * {
+  padding:var(--s0);
+}
+
 section h1, h2, h3 {
   border:0 !important;
 }
+
+#page .labels {
+  position:absolute;
+  padding-block:0;
+  display:block;
+  font-size:var(--s-2);
+  padding-inline-start:var(--s-3);
+  padding-inline-end:var(--s-3);
+  bottom:calc(var(--border-thin)*-1.5); 
+  right:calc(var(--border-thin)*1.5);
+  border-width:var(--border-real-thin) !important;
+}
+
+section[id*="-figurine"] * {
+  border:var(--border-real-thin) solid var(--color-dark);
+}
+
+section[id*="-figurine"] h1, h2, h3 {
+  border:0 !important;
+}
+
+section:nth-of-type(4n + 2) {
+  background-color:var(--color-dark);
+}
+
+section:nth-of-type(4n + 4) {
+  background-color:slategray;
+}
+
 /* box */
 
 .box {
+  display:flex;
   padding: var(--s1);
   border: var(--border-real-thin) solid var(--color-dark);
   color: var(--color-dark);
   background-color: var(--color-light);
 }
+
+.invert {
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  border-color: var(--color-light);
+}
+
+
 
 .box * {
   color: inherit;
@@ -127,79 +175,36 @@ section h1, h2, h3 {
   min-block-size: calc(var(--measure) / 4);
 }
 
-#box-demo > .box:nth-of-type(3n - 2) > span:nth-child(1) {
-  display: inline-block;
-  align-self: start;
-  padding:0;
-  border:0;
-}
-
-#box-demo > .box:nth-of-type(3n - 1) > span:nth-child(1) {
-  display: inline-block;
-  align-self: center;
-  padding:0;
-  border:0;
-}
-
-#box-demo > .box:nth-of-type(3n - 0) > span:nth-child(1) {
-  display: inline-block;
-  align-self: end;
-  padding:0;
-  border:0; 
-}
-
-#box-demo > .box > img, #box-demo > .box:has(img) {
-  padding:0;
-  border:none;
-}
 
 #box-demo > .box:last-of-type:hover {
   border:var(--border-thin) solid var(--color-light);
 }
 
-#box-demo .words, #stack-demo .words {
-  border-width:var(--border-real-thin) !important;
-  padding-inline-start:var(--s-3);
-  padding-inline-end:var(--s-3);
-  padding-block:0;
-  display:block;
-  font-size:var(--s-2);
-  position:absolute;
-  bottom:calc(var(--border-thin)*-1.5); 
-  right:calc(var(--border-thin)*1.5);
-}
 
-
-/* stack  - with its own box */
+/* stack */
 
 .stack {
   display:flex;
   flex-direction: column;
   justify-content: flex-start;
-  max-width:80%;
 }
 
 .stack *+* {
   margin-block-start:var(--s1);
 }
 
-#stack-demo, #stack-demo * {
-  color: var(--color-light);
-  border:var(--border-thin) solid var(--color-light);
-
-}
 #stack-demo > div {
   position:relative;
 }
 
-#stack-demo .stack .box {
+#stack-demo .stack,  #stack-demo .box {
   position:relative;
   display:flex;
-  flex: 1 1 auto;
-  background-color:inherit;
-  border:inherit;
   min-inline-size: calc(var(--measure) /4);
-  min-block-size: calc(var(--measure) / 4); 
+  min-block-size: calc(var(--measure) / 4);
+  background-color: var(--color-darkish); 
+  border: var(--border-thin) solid var(--color-light);
+  color: var(--color-light);
 }
 
 #stack-demo .stack > .box > span:nth-child(1) {
@@ -209,10 +214,6 @@ section h1, h2, h3 {
   border:0;
 }
 
-#stack-demo .stack > .box > img, #stack-demo .stack > .box:has(img) {
-  padding:0;
-  border:none;
-}
 
 #stack-demo .stack > .box:last-of-type:hover {
   border:var(--border-thin) solid var(--color-green);
@@ -309,18 +310,18 @@ padding:.5rem;
 /* 
 sidebar.  note - naming can get confusing.  the sidebar is the container that manages two elements, the thing that will be the actual side bar (first element int he container) and the second element which will take up the rest of the page */
 
-.sidebar-container {
+.sidebar {
   display:flex;
   flex-wrap:wrap;
   gap:var(--s1)
 }
 
 
-.sidebar-container > :first-child {
+.sidebar > :first-child {
   flex: 0 0 25ch;
 }
 
-.sidebar-container > :last-child {
+.sidebar > :last-child {
   flex-basis: 0;
   flex-grow: 999;
   min-inline-size: 50%;
