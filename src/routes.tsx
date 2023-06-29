@@ -1,8 +1,8 @@
 import { createHashRouter } from "react-router-dom";
 import Home from "./components/Home";
 import Error from "./components/Error";
-import Cycling from "./components/Cycling";
 import Layout from "./ui/Layout";
+import Switcher from "./components/Switcher";
 
 export default createHashRouter([
   {
@@ -12,11 +12,7 @@ export default createHashRouter([
     children: [
       {
         path: "",
-        element: <Home />,
-      },
-      {
-        path: "cycling",
-        element: <Cycling />,
+        element: <Switcher />,
       },
     ],
   },
