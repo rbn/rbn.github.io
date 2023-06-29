@@ -179,7 +179,7 @@ const Home = () => {
       </section>
       <section id="grid-demo" className="grayout">
         <div>another to do from this section - learn Resize Observer</div>
-        <div className="grid">
+        <div className="grid feature">
           <div></div>
           <div></div>
           <div></div>
@@ -195,7 +195,7 @@ const Home = () => {
         <h2>The Switcher</h2>
       </section>
       <section id="switcher-demo" className="grayout">
-        <div className="switcher">
+        <div className="switcher feature">
           <div className="switches">side</div>
           <div className="switches">feature</div>
           <div className="switches">side</div>
