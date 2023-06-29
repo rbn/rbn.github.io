@@ -1,28 +1,26 @@
-.flex-row {
-  flex-direction: row;
-}
 
-.flex-col {
-  flex-direction: column;
-}
 
 .blackout {
-  background-color: black;
-  color:var(--color-light);
+  background-color:var(--color-dark);
 }
 
 .grayout {
   background-color:slategray;
 }
 
-
-/* for the children of the one calling whitelines */
-.whitelines * {
-  border:var(--border-thin) solid var(--color-light);
+.invert, .invert * {
+  color: var(--color-light) !important;
+  background-color: var(--color-dark) !important;
+  border-color: var(--color-light);
 }
 
-.blacklines * {
-  border:var(--border-thin) solid var(--color-dark);
+
+section[id*="figurine"] * {
+  border:var(--border-real-thin) solid var(--color-dark);
+}
+
+.feature {
+  border:var(--border-real-thin) solid var(--color-love-red) !important;
 }
 .border-inherit {
   border:inherit;
@@ -32,20 +30,3 @@
   padding:var(--s2);
 }
 
-*[data-drop-shadow] {
-  text-align:center;
-  border-top: .1rem solid white !important;
-  border-left: .1rem solid white !important;
-
-}
-
-*[data-lime] {
-  background-color:lime !important;
-  color:blue;
-}
-
-*[data-lime]:hover{
-  background-color:black !important;
-  color:white;
-
-}

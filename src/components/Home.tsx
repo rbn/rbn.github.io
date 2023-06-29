@@ -1,12 +1,12 @@
 const Home = () => {
   return (
     <main>
-      <section id="box-figurine" className="blacklines">
+      <section id="box-figurine">
         <h2>The Box</h2>
         <div className="box"></div>
       </section>
       <section id="box-demo" className="blackout">
-        <div className="box invert">
+        <div className="box feature invert">
           <span>I am a box</span>
           <span className="words">box</span>
         </div>
@@ -23,7 +23,7 @@ const Home = () => {
           <span className="words">box</span>
         </div>
         <div className="box invert">
-          <span>don't ask me to manage margins or spacing</span>
+          <span>not margins. or gaps.</span>
           <span className="words">box</span>
         </div>
         <div className="box">
@@ -31,7 +31,7 @@ const Home = () => {
           <span className="words">box</span>
         </div>
       </section>
-      <section id="stack-figurine" className="blacklines">
+      <section id="stack-figurine">
         <h2>The Stack</h2>
         <div className="stack">
           <div></div>
@@ -40,7 +40,7 @@ const Home = () => {
         </div>
       </section>
       <section id="stack-demo" className="grayout">
-        <div className="stack">
+        <div className="stack feature">
           <div className="box">
             <span>I am the stack</span>
             <span className="words">stacked element</span>
@@ -77,21 +77,24 @@ const Home = () => {
           <span className="words">stack</span>
         </div>
       </section>{" "}
-      <section id="center-figurine" className="blacklines">
+      <section id="center-figurine">
         <h2>The Center</h2>
         <div>
           <hr />
         </div>
       </section>
       <section id="center-demo" className="blackout">
-        <div className="center">
-          <div className="stack whitelines">
-            <span>put a sidebar next to me later, ok?</span>
+        <div className="center feature">
+          <div className="stack invert">
+            <span>
+              i live in a div that lives in a stack, and that stack is centered.{" "}
+              <strong>And yet,</strong> text is left-aligned.
+            </span>
             <img src="velo.jpg" />
           </div>
         </div>
       </section>{" "}
-      <section id="cluster-figurine" className="blacklines">
+      <section id="cluster-figurine">
         <h2>The Cluster</h2>
         <div className="cluster">
           <span>x</span>
@@ -103,8 +106,8 @@ const Home = () => {
           <span>xx</span>
         </div>
       </section>
-      <section id="cluster" className="grayout">
-        <div id="cluster-demo" className="cluster">
+      <section id="cluster-demo" className="grayout">
+        <div className="cluster feature">
           <img src="trooper.jpg" alt="" />
           <div className="cluster">
             <div>
@@ -136,19 +139,22 @@ const Home = () => {
       </section>
       <section id="sidebar-demo" className="blackout">
         <div className="sidebar-container">
-          <div className="sidebar">
+          <div className="sidebar feature">
             <div className="cluster">
               <div>
-                <a href="#">birds of</a>
+                <a href="#">i will stay</a>
               </div>
               <div>
-                <a href="#">a feather</a>
+                <a href="#">on the side</a>
               </div>
               <div>
-                <a href="#">flock</a>
+                <a href="#">unless the content to the right</a>
               </div>
               <div>
-                <a href="#">together</a>
+                <a href="#">is forced to scale</a>
+              </div>
+              <div>
+                <a href="#">to less than my width</a>
               </div>
             </div>
           </div>
@@ -157,7 +163,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section id="grid-figurine" className="blacklines">
+      <section id="grid-figurine">
         <h2>The Grid</h2>
         <div className="grid">
           <div></div>
@@ -185,16 +191,29 @@ const Home = () => {
           <div></div>
         </div>
       </section>
-      <section id="switcher-figurine"></section>
-      <section id="switcher-demo">
-        <div>
-          <em>Next up:</em> switcher
-          <ul>
-            <li>switcher</li>
-            <li>resize observer</li>
-            <li>reel</li>
-            <li>imposter (is it like my labels??)</li>
-          </ul>
+      <section id="switcher-figurine">
+        <h2>The Switcher</h2>
+      </section>
+      <section id="switcher-demo" className="grayout">
+        <div className="switcher">
+          <div className="switches">side</div>
+          <div className="switches">feature</div>
+          <div className="switches">side</div>
+        </div>
+      </section>
+      <section id="frame-figurine">
+        <div className="sidebar-container">
+          <div>
+            <h2>The Frame</h2>
+          </div>
+          <div className="frame">
+            <img src="layout-icon-frame.svg" alt="" />
+          </div>
+        </div>
+      </section>
+      <section id="frame-demo" className="blackout">
+        <div className="frame feature">
+          <img src="yoda.jpg" alt="" />
         </div>
       </section>
     </main>
