@@ -203,11 +203,11 @@ const Home = () => {
       </section>
       <section id="frame-figurine">
         <div className="sidebar-container">
-          <div>
+          <div className="sidebar">
             <h2>The Frame</h2>
           </div>
-          <div className="frame">
-            <img src="layout-icon-frame.svg" alt="" />
+          <div className="primary-content">
+            <img src="yoda.jpg" alt="" />
           </div>
         </div>
       </section>
